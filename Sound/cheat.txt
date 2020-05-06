@@ -1,0 +1,4 @@
+copy daemon.conf in ~/.config/pulse
+
+Usefull Link: https://forum.manjaro.org/t/solved-terrible-sound-in-linux-much-better-in-windows/8203
+
