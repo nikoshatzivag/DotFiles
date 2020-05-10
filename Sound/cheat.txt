@@ -2,4 +2,4 @@ copy daemon.conf in ~/.config/pulse
 
 Usefull Link: https://forum.manjaro.org/t/solved-terrible-sound-in-linux-much-better-in-windows/8203
 
-
+Sound on linux explained: https://manpages.ubuntu.com/manpages/precise/man5/pulse-daemon.conf.5.html
