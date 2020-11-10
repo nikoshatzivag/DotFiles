@@ -70,10 +70,10 @@ if ${use_color} ; then
 	fi
 
 	if [[ ${EUID} == 0 ]] ; then
-		PS1="\[$(tput bold)\]\[\033[38;5;50m\]\u@\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;51m\]\W\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;50m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+		PS1="\[$(tput bold)\]\[\033[38;5;69m\]\u@\h\[$(tput sgr0)\]: \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;50m\]\W\[$(tput sgr0)\] \\$ \[$(tput sgr0)\]"
 		#PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
 	else
-		PS1="\[$(tput bold)\]\[\033[38;5;50m\]\u@\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;51m\]\W\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;50m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+		PS1="\[$(tput bold)\]\[\033[38;5;69m\]\u@\h\[$(tput sgr0)\]: \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;50m\]\W\[$(tput sgr0)\] \\$ \[$(tput sgr0)\]"
 		#PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
 	fi
 
@@ -108,9 +108,11 @@ alias la='ls -A'
 #alias source_vtune='source /opt/intel/vtune_profiler_2020.0.0.605129/vtune-vars.sh'
 alias ..='cd ..'
 alias ...='cd'
-alias ServerHost='echo -n -e "\nIP: " && ifconfig wlp2s0 | grep "inet " | cut -d " " -f 10 && echo -e "\n\n" && python -m http.server 2222'
+alias ServerHost='echo -n -e "\nIP: " && ifconfig wlp1s0 | grep "inet " | cut -d " " -f 10 && echo -e "\n\n" && python -m http.server 2222'
 alias ll='ls -l'
 alias alsamixer='alsamixer -c0'
+alias vm='sudo systemctl start libvirtd'
+alias UbuntuServer='ssh -X me@192.168.122.41'
 
 xhost +local:root > /dev/null 2>&1
 
@@ -155,3 +157,4 @@ ex ()
 }
 
 export EDITOR=vim
+export TERMINAL=terminator
